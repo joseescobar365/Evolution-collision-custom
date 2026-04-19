@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evolution Collision & Custom | Fresno, CA</title>
+<meta name="description" content="Premium collision repair, custom paint & classic car restoration in Fresno, CA. 15+ years experience. By appointment only. Call Ivan Escobar today.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #CC1100;
+    --red-light: #FF2200;
+    --red-dark: #880A00;
+    --black: #080808;
+    --black-mid: #111111;
+    --black-light: #1A1A1A;
+    --white: #F8F8F8;
+    --gray: #888;
+    --gray-light: #BBBBBB;
+  }
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+body {
+background: var(–black);
+color: var(–white);
+font-family: ‘Barlow’, sans-serif;
+overflow-x: hidden;
+}
+
+nav {
+position: fixed;
+top: 0; left: 0; right: 0;
+z-index: 1000;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 1rem 3rem;
+background: rgba(8,8,8,0.95);
+backdrop-filter: blur(12px);
+border-bottom: 2px solid var(–red);
+}
+
+.nav-logo {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 1.4rem;
+color: var(–white);
+letter-spacing: 0.15em;
+text-decoration: none;
+}
+
+.nav-logo span { color: var(–red); }
+
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+
+.nav-links a {
+color: var(–gray-light);
+text-decoration: none;
+font-size: 0.78rem;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+font-weight: 600;
+transition: color 0.3s;
+font-family: ‘Barlow Condensed’, sans-serif;
+}
+
+.nav-links a:hover { color: var(–red); }
+
+.nav-cta {
+background: var(–red) !important;
+color: var(–white) !important;
+padding: 0.55rem 1.4rem !important;
+transition: background 0.3s !important;
+}
+
+.nav-cta:hover { background: var(–red-light) !important; }
+
+/* HERO */
+.hero {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding: 7rem 2rem 4rem;
+position: relative;
+overflow: hidden;
+background: var(–black);
+}
+
+.hero-bg {
+position: absolute; inset: 0;
+background:
+radial-gradient(ellipse 70% 50% at 50% 30%, rgba(204,17,0,0.13) 0%, transparent 65%),
+radial-gradient(ellipse 30% 40% at 80% 70%, rgba(204,17,0,0.06) 0%, transparent 60%);
+}
+
+.hero-stripe {
+position: absolute;
+top: 0; left: -10%;
+width: 35%; height: 100%;
+background: linear-gradient(105deg, rgba(204,17,0,0.07) 0%, transparent 100%);
+pointer-events: none;
+}
+
+.hero-eyebrow {
+font-family: ‘Barlow Condensed’, sans-serif;
+font-size: 0.85rem;
+letter-spacing: 0.45em;
+text-transform: uppercase;
+color: var(–red);
+margin-bottom: 1.5rem;
+animation: fadeUp 0.8s ease 0.2s both;
+position: relative;
+}
+
+h1 {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: clamp(3.5rem, 10vw, 9rem);
+font-weight: 400;
+line-height: 0.9;
+letter-spacing: 0.04em;
+color: var(–white);
+animation: fadeUp 0.8s ease 0.4s both;
+position: relative;
+}
+
+h1 .red { color: var(–red); }
+h1 .outline { -webkit-text-stroke: 2px var(–white); color: transparent; }
+
+.hero-sub {
+font-family: ‘Barlow Condensed’, sans-serif;
+font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+color: var(–gray-light);
+letter-spacing: 0.25em;
+text-transform: uppercase;
+margin: 2rem 0 3rem;
+animation: fadeUp 0.8s ease 0.6s both;
+position: relative;
+}
+
+.hero-buttons {
+display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+animation: fadeUp 0.8s ease 0.8s both; position: relative;
+}
+
+.btn-primary {
+background: var(–red); color: var(–white);
+padding: 1rem 2.8rem;
+font-family: ‘Barlow Condensed’, sans-serif;
+font-weight: 700; font-size: 0.95rem;
+letter-spacing: 0.2em; text-transform: uppercase;
+border: none; cursor: pointer; text-decoration: none;
+display: inline-block; transition: all 0.3s;
+}
+
+.btn-primary:hover { background: var(–red-light); transform: translateY(-3px); }
+
+.btn-secondary {
+background: transparent; color: var(–white);
+padding: 1rem 2.8rem;
+font-family: ‘Barlow Condensed’, sans-serif;
+font-weight: 700; font-size: 0.95rem;
+letter-spacing: 0.2em; text-transform: uppercase;
+border: 2px solid var(–white);
+cursor: pointer; text-decoration: none;
+display: inline-block; transition: all 0.3s;
+}
+
+.btn-secondary:hover { border-color: var(–red); color: var(–red); transform: translateY(-3px); }
+
+.hero-stats {
+display: flex; gap: 5rem; margin-top: 5rem;
+animation: fadeUp 0.8s ease 1s both; position: relative;
+}
+
+.stat { text-align: center; }
+
+.stat-number {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 3rem; color: var(–red); line-height: 1;
+}
+
+.stat-label {
+font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+color: var(–gray); margin-top: 0.3rem;
+font-family: ‘Barlow Condensed’, sans-serif;
+}
+
+section { padding: 6rem 2rem; position: relative; }
+
+.section-label {
+font-family: ‘Barlow Condensed’, sans-serif;
+font-size: 0.72rem; letter-spacing: 0.45em;
+text-transform: uppercase; color: var(–red);
+text-align: center; margin-bottom: 0.8rem;
+}
+
+h2 {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: clamp(2.5rem, 5vw, 4rem);
+font-weight: 400; text-align: center;
+letter-spacing: 0.06em; margin-bottom: 1rem; color: var(–white);
+}
+
+.section-rule {
+width: 60px; height: 3px;
+background: var(–red); margin: 0 auto 4rem;
+}
+
+/* SERVICES */
+.services-bg {
+background: var(–black-mid);
+border-top: 1px solid rgba(204,17,0,0.3);
+border-bottom: 1px solid rgba(204,17,0,0.3);
+}
+
+.services-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 2px; max-width: 1100px; margin: 0 auto;
+}
+
+.service-card {
+background: var(–black-light); padding: 3rem 2.5rem;
+position: relative; overflow: hidden; transition: transform 0.3s;
+border-bottom: 3px solid transparent;
+}
+
+.service-card:hover { border-bottom-color: var(–red); transform: translateY(-4px); }
+
+.service-icon { font-size: 2.8rem; margin-bottom: 1.5rem; }
+
+.service-card h3 {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 1.6rem; color: var(–white);
+margin-bottom: 1rem; letter-spacing: 0.06em;
+}
+
+.service-card p { color: var(–gray-light); font-size: 0.95rem; line-height: 1.75; }
+
+/* EMOTION SECTION */
+.emotion-section { background: var(–black); padding: 6rem 2rem; }
+.emotion-inner { max-width: 900px; margin: 0 auto; }
+
+.emotion-before-after {
+display: grid; grid-template-columns: 1fr 1fr;
+gap: 3px; margin-bottom: 4rem;
+}
+
+.emotion-panel { padding: 3rem 2.5rem; position: relative; }
+.emotion-panel.before { background: #0F0808; border-left: 4px solid #444; }
+.emotion-panel.after { background: #080808; border-left: 4px solid var(–red); }
+
+.emotion-panel-label {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 1rem; letter-spacing: 0.3em;
+margin-bottom: 1.5rem;
+display: flex; align-items: center; gap: 0.8rem;
+}
+
+.emotion-panel.before .emotion-panel-label { color: #777; }
+.emotion-panel.after .emotion-panel-label { color: var(–red); }
+
+.emotion-panel ul { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
+
+.emotion-panel ul li {
+font-size: 0.95rem; line-height: 1.6;
+padding-left: 1.5rem; position: relative; color: var(–gray-light);
+}
+
+.emotion-panel.before ul li::before { content: ‘✗’; position: absolute; left: 0; color: #555; }
+.emotion-panel.after ul li::before { content: ‘✓’; position: absolute; left: 0; color: var(–red); }
+
+.emotion-promise {
+background: linear-gradient(135deg, #110000, #180000);
+border: 1px solid rgba(204,17,0,0.4);
+padding: 3rem; text-align: center;
+}
+
+.emotion-promise h3 {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 2rem; letter-spacing: 0.08em;
+color: var(–white); margin-bottom: 1rem;
+}
+
+.emotion-promise p {
+color: var(–gray-light); line-height: 1.8;
+font-size: 1rem; max-width: 650px; margin: 0 auto;
+}
+
+.emotion-promise p strong { color: var(–red); }
+
+/* FAQ */
+.faq-section { background: var(–black-mid); border-top: 1px solid rgba(204,17,0,0.2); }
+.faq-inner { max-width: 800px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); overflow: hidden; }
+
+.faq-question {
+width: 100%; background: none; border: none;
+color: var(–white); text-align: left;
+padding: 1.6rem 0;
+font-family: ‘Barlow Condensed’, sans-serif;
+font-size: 1.1rem; font-weight: 600; letter-spacing: 0.05em;
+cursor: pointer; display: flex; justify-content: space-between;
+align-items: center; gap: 1rem; transition: color 0.3s;
+}
+
+.faq-question:hover { color: var(–red); }
+
+.faq-icon {
+font-size: 1.4rem; color: var(–red); flex-shrink: 0;
+transition: transform 0.3s; font-style: normal;
+}
+
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.faq-item.open .faq-answer { max-height: 400px; }
+
+.faq-answer p {
+color: var(–gray-light); line-height: 1.8;
+font-size: 0.95rem; padding-bottom: 1.5rem;
+}
+
+/* VIDEOS */
+.videos-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 3px; max-width: 1100px; margin: 0 auto;
+}
+
+.video-placeholder {
+background: var(–black-light);
+border: 1px solid rgba(255,255,255,0.07);
+aspect-ratio: 16/9;
+display: flex; flex-direction: column;
+align-items: center; justify-content: center;
+gap: 1rem; cursor: pointer; transition: border-color 0.3s;
+}
+
+.video-placeholder:hover { border-color: var(–red); }
+
+.play-btn {
+width: 64px; height: 64px;
+border: 2px solid var(–red); border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+font-size: 1.4rem; color: var(–red); transition: all 0.3s;
+}
+
+.video-placeholder:hover .play-btn { background: var(–red); color: var(–white); }
+
+.video-label {
+font-family: ‘Barlow Condensed’, sans-serif;
+font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(–gray);
+}
+
+/* APPOINTMENT */
+.appointment-bg { background: var(–black); border-top: 1px solid rgba(204,17,0,0.3); }
+.appointment-inner { max-width: 620px; margin: 0 auto; text-align: center; }
+.appointment-inner p { color: var(–gray-light); line-height: 1.8; margin-bottom: 3rem; font-size: 1rem; }
+.contact-options { display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+
+.contact-btn {
+display: flex; align-items: center; gap: 1rem;
+padding: 1.1rem 2.5rem; width: 100%; max-width: 380px;
+text-decoration: none;
+font-family: ‘Barlow Condensed’, sans-serif;
+font-weight: 700; font-size: 1rem;
+letter-spacing: 0.15em; text-transform: uppercase; transition: all 0.3s;
+}
+
+.contact-btn.whatsapp { background: #25D366; color: #fff; }
+.contact-btn.whatsapp:hover { background: #1ebe59; transform: translateY(-2px); }
+.contact-btn.call { background: transparent; color: var(–white); border: 2px solid var(–white); }
+.contact-btn.call:hover { border-color: var(–red); color: var(–red); transform: translateY(-2px); }
+.contact-btn-icon { font-size: 1.4rem; }
+
+/* BUSINESS CARD */
+.card-section { padding: 6rem 2rem; background: var(–black-mid); }
+
+.biz-card {
+max-width: 500px; margin: 0 auto;
+background: linear-gradient(135deg, #120000 0%, #0D0D0D 50%, #0F0000 100%);
+border: 1px solid rgba(204,17,0,0.5);
+padding: 3rem 2.5rem; position: relative; overflow: hidden;
+}
+
+.biz-card::before {
+content: ‘’; position: absolute;
+top: 0; left: 0; right: 0; height: 4px;
+background: linear-gradient(90deg, transparent, var(–red), transparent);
+}
+
+.biz-card::after {
+content: ‘’; position: absolute;
+bottom: 0; left: 0; right: 0; height: 4px;
+background: linear-gradient(90deg, transparent, var(–red), transparent);
+}
+
+.card-logo-text {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 1.5rem; color: var(–white); letter-spacing: 0.1em; margin-bottom: 0.3rem;
+}
+
+.card-logo-text span { color: var(–red); }
+
+.card-tagline {
+font-family: ‘Barlow Condensed’, sans-serif;
+font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase;
+color: var(–gray); margin-bottom: 2rem;
+}
+
+.card-divider {
+height: 1px;
+background: linear-gradient(90deg, var(–red), transparent);
+margin-bottom: 2rem;
+}
+
+.card-name {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 1.3rem; color: var(–white); letter-spacing: 0.08em; margin-bottom: 0.3rem;
+}
+
+.card-title {
+font-family: ‘Barlow Condensed’, sans-serif;
+font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+color: var(–red); margin-bottom: 2rem;
+}
+
+.card-contacts { display: flex; flex-direction: column; gap: 0.8rem; }
+
+.card-contact-item {
+display: flex; align-items: center; gap: 0.8rem;
+font-size: 0.9rem; color: var(–gray-light); text-decoration: none; transition: color 0.3s;
+}
+
+.card-contact-item:hover { color: var(–red); }
+
+.card-contact-icon {
+width: 30px; height: 30px;
+border: 1px solid rgba(204,17,0,0.4);
+display: flex; align-items: center; justify-content: center;
+font-size: 0.9rem; flex-shrink: 0; color: var(–red);
+}
+
+.card-qr { margin-top: 2rem; display: flex; align-items: center; gap: 1.5rem; }
+
+.qr-box {
+width: 80px; height: 80px;
+border: 1px solid rgba(204,17,0,0.4);
+display: flex; align-items: center; justify-content: center;
+flex-shrink: 0; background: #fff; padding: 4px;
+}
+
+.qr-box img { width: 100%; height: 100%; object-fit: contain; }
+
+.qr-text {
+font-size: 0.72rem; color: var(–gray); line-height: 1.6;
+font-family: ‘Barlow Condensed’, sans-serif; letter-spacing: 0.05em;
+}
+
+/* MAP */
+.map-section { background: var(–black); border-top: 1px solid rgba(204,17,0,0.2); }
+.map-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+
+.map-notice {
+background: rgba(204,17,0,0.07);
+border: 1px solid rgba(204,17,0,0.3);
+padding: 1.5rem 2rem; margin-bottom: 2.5rem;
+font-size: 0.88rem; color: var(–gray-light); line-height: 1.7;
+}
+
+.map-notice strong { color: var(–red); }
+
+.map-embed {
+width: 100%; height: 350px;
+border: 1px solid rgba(204,17,0,0.2);
+filter: grayscale(80%) sepia(20%);
+}
+
+/* FOOTER */
+footer {
+background: #050505; border-top: 2px solid var(–red);
+padding: 3rem 2rem; text-align: center;
+}
+
+.footer-logo {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 1.5rem; color: var(–white); letter-spacing: 0.15em; margin-bottom: 1rem;
+}
+
+.footer-logo span { color: var(–red); }
+
+.footer-links {
+display: flex; justify-content: center; gap: 2rem;
+margin-bottom: 2rem; flex-wrap: wrap;
+}
+
+.footer-links a {
+color: var(–gray); text-decoration: none;
+font-family: ‘Barlow Condensed’, sans-serif;
+font-size: 0.78rem; letter-spacing: 0.18em;
+text-transform: uppercase; transition: color 0.3s;
+}
+
+.footer-links a:hover { color: var(–red); }
+
+.footer-copy { font-size: 0.75rem; color: rgba(136,136,136,0.4); letter-spacing: 0.1em; }
+
+/* FLOATING BUTTONS */
+.wa-float {
+position: fixed; bottom: 12rem; right: 2rem; z-index: 998;
+width: 58px; height: 58px; background: #25D366; border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+font-size: 1.7rem; text-decoration: none;
+box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+transition: transform 0.3s; animation: pulse-wa 2.5s infinite;
+}
+
+.wa-float:hover { transform: scale(1.1); }
+
+.ig-float {
+position: fixed; bottom: 7rem; right: 2rem; z-index: 998;
+width: 58px; height: 58px; border-radius: 50%;
+background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+display: flex; align-items: center; justify-content: center;
+text-decoration: none;
+box-shadow: 0 4px 20px rgba(214,36,159,0.4);
+transition: transform 0.3s;
+animation: pulse-ig 2.5s infinite;
+}
+
+.ig-float:hover { transform: scale(1.1); }
+
+.ig-float svg { width: 28px; height: 28px; fill: white; }
+
+@keyframes pulse-ig {
+0%, 100% { box-shadow: 0 4px 20px rgba(214,36,159,0.4); }
+50% { box-shadow: 0 4px 30px rgba(214,36,159,0.7); }
+}
+
+.chat-toggle {
+position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+width: 58px; height: 58px; background: var(–red); border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+font-size: 1.6rem; cursor: pointer;
+box-shadow: 0 4px 20px rgba(204,17,0,0.5);
+border: none; transition: transform 0.3s, background 0.3s;
+animation: pulse-chat 2.5s infinite;
+}
+
+.chat-toggle:hover { transform: scale(1.1); background: var(–red-light); }
+
+/* CHAT WINDOW */
+.chat-window {
+position: fixed; bottom: 7rem; right: 2rem; z-index: 997;
+width: 350px;
+background: var(–black-light);
+border: 1px solid rgba(204,17,0,0.4);
+display: flex; flex-direction: column;
+box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+transform: scale(0.8) translateY(30px);
+opacity: 0; pointer-events: none;
+transform-origin: bottom right;
+transition: all 0.3s ease;
+}
+
+.chat-window.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
+
+.chat-header {
+background: var(–red); padding: 1rem 1.2rem;
+display: flex; align-items: center; gap: 0.8rem; flex-shrink: 0;
+}
+
+.chat-avatar {
+width: 36px; height: 36px; border-radius: 50%;
+background: rgba(255,255,255,0.2);
+display: flex; align-items: center; justify-content: center;
+font-size: 1.2rem; flex-shrink: 0;
+}
+
+.chat-header-info { flex: 1; }
+
+.chat-header-name {
+font-family: ‘Barlow Condensed’, sans-serif;
+font-weight: 700; font-size: 0.95rem; letter-spacing: 0.05em; color: #fff;
+}
+
+.chat-header-status { font-size: 0.72rem; color: rgba(255,255,255,0.75); }
+
+.chat-close {
+background: none; border: none; color: #fff;
+font-size: 1.3rem; cursor: pointer; padding: 0.2rem;
+line-height: 1; opacity: 0.8; transition: opacity 0.2s;
+}
+
+.chat-close:hover { opacity: 1; }
+
+.chat-messages {
+overflow-y: auto; padding: 1rem;
+display: flex; flex-direction: column; gap: 0.8rem;
+min-height: 250px; max-height: 300px; scroll-behavior: smooth;
+}
+
+.chat-messages::-webkit-scrollbar { width: 4px; }
+.chat-messages::-webkit-scrollbar-thumb { background: rgba(204,17,0,0.4); border-radius: 2px; }
+
+.msg { display: flex; flex-direction: column; max-width: 85%; }
+.msg.bot { align-self: flex-start; }
+.msg.user { align-self: flex-end; }
+
+.msg-bubble { padding: 0.75rem 1rem; font-size: 0.88rem; line-height: 1.5; border-radius: 2px; }
+.msg.bot .msg-bubble { background: #222; color: var(–white); border-left: 3px solid var(–red); }
+.msg.user .msg-bubble { background: var(–red); color: #fff; }
+
+.msg-time { font-size: 0.65rem; color: var(–gray); margin-top: 0.3rem; padding: 0 0.2rem; }
+.msg.user .msg-time { text-align: right; }
+
+.chat-typing {
+display: none; align-self: flex-start;
+padding: 0.7rem 1rem; background: #222;
+border-left: 3px solid var(–red);
+gap: 4px; align-items: center; margin: 0 1rem 0.5rem;
+}
+
+.chat-typing.visible { display: flex; }
+
+.dot {
+width: 6px; height: 6px; background: var(–gray);
+border-radius: 50%; animation: bounce 1.2s infinite;
+}
+
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+
+.chat-input-area {
+display: flex; border-top: 1px solid rgba(255,255,255,0.1); flex-shrink: 0;
+}
+
+.chat-input {
+flex: 1; background: #111; border: none;
+color: var(–white); padding: 0.9rem 1rem;
+font-family: ‘Barlow’, sans-serif; font-size: 0.88rem; outline: none;
+}
+
+.chat-input::placeholder { color: var(–gray); }
+
+.chat-send {
+background: var(–red); border: none; color: #fff;
+padding: 0 1.2rem; font-size: 1.1rem; cursor: pointer;
+transition: background 0.2s; flex-shrink: 0;
+}
+
+.chat-send:hover { background: var(–red-light); }
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(25px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-wa {
+0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+50% { box-shadow: 0 4px 30px rgba(37,211,102,0.7); }
+}
+
+@keyframes pulse-chat {
+0%, 100% { box-shadow: 0 4px 20px rgba(204,17,0,0.4); }
+50% { box-shadow: 0 4px 30px rgba(204,17,0,0.7); }
+}
+
+@keyframes bounce {
+0%, 60%, 100% { transform: translateY(0); }
+30% { transform: translateY(-5px); }
+}
+
+@media (max-width: 768px) {
+nav { padding: 1rem 1.2rem; }
+.nav-links { display: none; }
+.hero-stats { gap: 2rem; }
+.stat-number { font-size: 2.2rem; }
+.emotion-before-after { grid-template-columns: 1fr; }
+.chat-window { width: calc(100vw - 3rem); right: 1.5rem; }
+.biz-card { padding: 2rem 1.5rem; }
+}
+</style>
+
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">EVOLUTION <span>COLLISION</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#collision">Why Us</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#work">Our Work</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="#appointment" class="nav-cta">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-stripe"></div>
+  <div style="position:relative;z-index:1;width:100%;">
+    <div class="hero-eyebrow">Fresno, California · Est. 2009 · By Appointment Only</div>
+    <h1>EVOLUTION<br><span class="red">COLLISION</span><br><span class="outline">&amp; CUSTOM</span></h1>
+    <p class="hero-sub">Collision Repair · Custom Paint · Classic Car Restoration</p>
+    <div class="hero-buttons">
+      <a href="https://wa.me/15593942707?text=Hi%20Ivan!%20I%20found%20your%20website%20and%20I%27d%20like%20to%20book%20an%20appointment." class="btn-primary" target="_blank">Book via WhatsApp</a>
+      <a href="tel:+15593942707" class="btn-secondary">Call Now</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-number">15+</div><div class="stat-label">Years Experience</div></div>
+      <div class="stat"><div class="stat-number">100%</div><div class="stat-label">Custom Work</div></div>
+      <div class="stat"><div class="stat-number">★★★★★</div><div class="stat-label">Quality</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+
+<section class="services-bg" id="services">
+  <div class="section-label">What We Do</div>
+  <h2>Our Services</h2>
+  <div class="section-rule"></div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🔧</div>
+      <h3>Collision Repair</h3>
+      <p>We know how stressful an accident can be. Our expert collision repair restores your vehicle to factory condition — or better. From minor dents to major structural damage, we handle it all with precision, care, and full transparency.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎨</div>
+      <h3>Custom Paint</h3>
+      <p>Candy colors, metallic flakes, airbrushing, full color changes — your vision brought to life. Every custom paint job at Evolution is one of a kind. Your car. Your identity. Your statement.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏆</div>
+      <h3>Classic Car Restoration</h3>
+      <p>Legends deserve master-level care. We bring classic cars back to life with period-correct finishes or custom modernized builds. Every restoration is handled with deep respect for the vehicle's history.</p>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:3rem;">
+    <p style="color:var(--gray);font-size:0.85rem;letter-spacing:0.1em;font-family:'Barlow Condensed',sans-serif;">⚠️ BY APPOINTMENT ONLY — Contact us to schedule your consultation</p>
+  </div>
+</section>
+
+<!-- EMOTIONAL COLLISION SECTION -->
+
+<section class="emotion-section" id="collision">
+  <div class="section-label">The Evolution Promise</div>
+  <h2>We Understand How You Feel</h2>
+  <div class="section-rule"></div>
+  <div class="emotion-inner">
+    <div class="emotion-before-after">
+      <div class="emotion-panel before">
+        <div class="emotion-panel-label">😟 After the Accident</div>
+        <ul>
+          <li>Stressed, overwhelmed, and unsure what to do next</li>
+          <li>Worried your car will never look the same again</li>
+          <li>Afraid of being overcharged or taken advantage of</li>
+          <li>Frustrated by not knowing how long repairs will take</li>
+          <li>Feeling like just another number at a big body shop</li>
+          <li>Questioning if the quality will match what you're paying</li>
+        </ul>
+      </div>
+      <div class="emotion-panel after">
+        <div class="emotion-panel-label">😌 After Working With Ivan</div>
+        <ul>
+          <li>Calm and confident — you're in expert hands</li>
+          <li>Your car looks better than before the accident</li>
+          <li>Transparent pricing with zero hidden surprises</li>
+          <li>Clear timelines communicated every step of the way</li>
+          <li>Treated like family — personal, one-on-one attention</li>
+          <li>Proud to drive your car again, head held high</li>
+        </ul>
+      </div>
+    </div>
+    <div class="emotion-promise">
+      <h3>Your Car Is More Than Metal — It's Personal</h3>
+      <p>At Evolution Collision & Custom, we get it. An accident doesn't just damage your vehicle — it disrupts your life. That's why Ivan personally works on <strong>every single project</strong>, treating your car with the same care he'd give his own. With <strong>15+ years of experience</strong> and a passion for perfection, we don't just fix cars — we restore your peace of mind and your pride.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+
+<section class="faq-section" id="faq">
+  <div class="section-label">Got Questions?</div>
+  <h2>Frequently Asked Questions</h2>
+  <div class="section-rule"></div>
+  <div class="faq-inner">
+
+```
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">How long will my repair take?<i class="faq-icon">+</i></button>
+  <div class="faq-answer"><p>Every repair is unique, so timelines vary by the extent of the damage. Minor collision repairs can take 3–5 days, while more complex structural work or full custom paint jobs may take 1–3 weeks. Ivan will give you a clear, honest estimate during your consultation so you're never left guessing.</p></div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">Will my car look exactly like it did before?<i class="faq-icon">+</i></button>
+  <div class="faq-answer"><p>Yes — and often better. Ivan takes pride in color-matching paint with precision and restoring every panel to factory condition. Many clients are amazed that their repaired area looks fresher than the rest of the car. Your complete satisfaction is the standard, not just the repair itself.</p></div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">Do you work with insurance?<i class="faq-icon">+</i></button>
+  <div class="faq-answer"><p>Yes, we work with most insurance claims. We recommend contacting Ivan directly first so he can review your damage and provide documentation to support your claim. We'll help guide you through the process to make it as smooth and stress-free as possible.</p></div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">Why do you work by appointment only?<i class="faq-icon">+</i></button>
+  <div class="faq-answer"><p>Because your car deserves 100% focus. By working appointment-only, Ivan gives each vehicle — and each client — the full attention they deserve. You're not dropped off and forgotten. You are a priority from day one to the day you pick up your car looking perfect.</p></div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">Can you match my exact paint color?<i class="faq-icon">+</i></button>
+  <div class="faq-answer"><p>Absolutely. Ivan uses professional-grade color-matching technology and has 15+ years of experience with paint correction. Whether it's a factory OEM color or a custom blend, we'll match it perfectly. You won't be able to tell where the repair ends and the original paint begins.</p></div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">How much does collision repair cost?<i class="faq-icon">+</i></button>
+  <div class="faq-answer"><p>Pricing depends on the extent of the damage, parts needed, and the type of repair. Ivan provides a free, honest estimate during your consultation — no hidden fees, no surprises. What he quotes is what you pay. Contact us today to schedule your free assessment.</p></div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">How do I get started and what's the address?<i class="faq-icon">+</i></button>
+  <div class="faq-answer"><p>Simply reach out via WhatsApp or phone to schedule a free consultation. We are located in Fresno, California. To protect our active projects and the privacy of our clients' vehicles, we share the exact address after booking. Contact Ivan at (559) 394-2707 and he'll take care of everything.</p></div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">Do you do custom paint on any car, not just collision repairs?<i class="faq-icon">+</i></button>
+  <div class="faq-answer"><p>Yes! Custom paint is one of our biggest specialties. Full color changes, candy finishes, metallic flakes, airbrushed artwork, classic car restoration paint — we do it all. Bring your vision and Ivan will make it a reality. No project is too bold or too detailed.</p></div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- WORK / VIDEOS -->
+
+<section id="work" style="background:var(--black-mid);">
+  <div class="section-label">Portfolio</div>
+  <h2>Our Work</h2>
+  <div class="section-rule"></div>
+  <div class="videos-grid">
+    <div class="video-placeholder"><div class="play-btn">▶</div><div class="video-label">Custom Paint Job</div></div>
+    <div class="video-placeholder"><div class="play-btn">▶</div><div class="video-label">Collision Repair</div></div>
+    <div class="video-placeholder"><div class="play-btn">▶</div><div class="video-label">Classic Restoration</div></div>
+  </div>
+  <p style="text-align:center;margin-top:2rem;color:var(--gray);font-size:0.9rem;">
+    📱 See our latest work on Instagram:
+    <a href="https://www.instagram.com/evolutioncollisoncustom" target="_blank" style="color:var(--red);">evolutioncollisoncustom</a>
+  </p>
+</section>
+
+<!-- APPOINTMENT -->
+
+<section class="appointment-bg" id="appointment">
+  <div class="section-label">Work With Us</div>
+  <h2>Book an Appointment</h2>
+  <div class="section-rule"></div>
+  <div class="appointment-inner">
+    <p>We work <strong style="color:var(--white);">by appointment only</strong> to give every project the full attention it deserves. Contact Ivan directly via WhatsApp or phone to schedule your free consultation — no pressure, just an honest conversation about your car.</p>
+    <div class="contact-options">
+      <a href="https://wa.me/15593942707?text=Hi%20Ivan!%20I%20found%20your%20website%20and%20I%27d%20like%20to%20book%20an%20appointment." class="contact-btn whatsapp" target="_blank">
+        <span class="contact-btn-icon">💬</span> Message on WhatsApp
+      </a>
+      <a href="tel:+15593942707" class="contact-btn call">
+        <span class="contact-btn-icon">📞</span> Call: (559) 394-2707
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+
+<section class="map-section" id="location">
+  <div class="section-label">Location</div>
+  <h2>Find Us in Fresno</h2>
+  <div class="section-rule"></div>
+  <div class="map-inner">
+    <div class="map-notice">
+      🔒 <strong>By Appointment Only</strong> — To protect our clients' projects and vehicles, our exact address is shared privately after booking. We are located in <strong>Fresno, California</strong>. Contact us to schedule and receive directions.
+    </div>
+    <iframe class="map-embed"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d202642.5!2d-119.8!3d36.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80945770f000b5c5%3A0x42f6a9d20d9a5fc7!2sFresno%2C%20CA!5e0!3m2!1sen!2sus!4v1"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Fresno California">
+    </iframe>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-logo">EVOLUTION <span>COLLISION</span> & CUSTOM</div>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#collision">Why Us</a>
+    <a href="#faq">FAQ</a>
+    <a href="#work">Our Work</a>
+    <a href="#location">Location</a>
+    <a href="#appointment">Book Appointment</a>
+    <a href="https://www.instagram.com/evolutioncollisoncustom" target="_blank">Instagram</a>
+    <a href="https://wa.me/15593942707" target="_blank">WhatsApp</a>
+  </div>
+  <div class="footer-copy">© 2026 Evolution Collision & Custom · Fresno, California · All Rights Reserved</div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+
+<a href="https://wa.me/15593942707?text=Hi%20Ivan!%20I%20found%20your%20website%20and%20I%27d%20like%20to%20book%20an%20appointment." class="wa-float" target="_blank" title="WhatsApp">💬</a>
+
+<!-- FLOATING INSTAGRAM -->
+
+<a href="https://www.instagram.com/evolutioncollisoncustom" class="ig-float" target="_blank" title="Instagram">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+  </svg>
+</a>
+
+<!-- AI CHAT BUTTON -->
+
+<button class="chat-toggle" onclick="toggleChat()" title="Ask our AI Assistant">🤖</button>
+
+<!-- AI CHAT WINDOW -->
+
+<div class="chat-window" id="chatWindow">
+  <div class="chat-header">
+    <div class="chat-avatar">🤖</div>
+    <div class="chat-header-info">
+      <div class="chat-header-name">ECC Assistant</div>
+      <div class="chat-header-status">● Online — Ask me anything</div>
+    </div>
+    <button class="chat-close" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="msg bot">
+      <div class="msg-bubble">👋 Hi! I'm the Evolution Collision & Custom assistant. I can answer questions about services, pricing, appointments, and more. How can I help you?</div>
+      <div class="msg-time">Just now</div>
+    </div>
+  </div>
+  <div class="chat-typing" id="chatTyping">
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  </div>
+  <div class="chat-input-area">
+    <input type="text" class="chat-input" id="chatInput" placeholder="Type your question..." onkeydown="if(event.key==='Enter')sendMessage()"/>
+    <button class="chat-send" onclick="sendMessage()">➤</button>
+  </div>
+</div>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+function toggleChat() {
+  const win = document.getElementById('chatWindow');
+  win.classList.toggle('open');
+  if (win.classList.contains('open')) document.getElementById('chatInput').focus();
+}
+
+const SYSTEM_PROMPT = `You are the friendly AI assistant for Evolution Collision & Custom, a premium auto body shop in Fresno, California owned by Ivan Escobar with 15+ years of experience.
+
+Business info:
+- Services: Collision repair, custom paint jobs, classic car restoration
+- Location: Fresno, California (exact address shared after booking to protect client projects)
+- Phone & WhatsApp: (559) 394-2707
+- Instagram: evolutioncollisoncustom
+- Appointments: By appointment only — no walk-ins
+- Owner: Ivan Escobar, master technician, 15+ years experience
+
+Your personality: Warm, empathetic, knowledgeable about auto body work. You understand that accidents are stressful and you guide customers with care and honesty. Keep responses to 2–4 sentences max. End with a call to action to book via WhatsApp or call (559) 394-2707 when appropriate. Never invent specific prices — say pricing depends on the job and a free estimate is available. If you truly don't know something, direct them to contact Ivan directly.`;
+
+let conversationHistory = [];
+
+async function sendMessage() {
+  const input = document.getElementById('chatInput');
+  const msg = input.value.trim();
+  if (!msg) return;
+  input.value = '';
+  addMessage(msg, 'user');
+  conversationHistory.push({ role: 'user', content: msg });
+  const typing = document.getElementById('chatTyping');
+  typing.classList.add('visible');
+  scrollChat();
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: SYSTEM_PROMPT,
+        messages: conversationHistory
+      })
+    });
+    const data = await response.json();
+    const reply = data.content?.[0]?.text || "I'm having trouble right now. Please call Ivan at (559) 394-2707!";
+    typing.classList.remove('visible');
+    addMessage(reply, 'bot');
+    conversationHistory.push({ role: 'assistant', content: reply });
+  } catch (err) {
+    typing.classList.remove('visible');
+    addMessage("Sorry, I'm having a connection issue. Please contact Ivan at (559) 394-2707 or via WhatsApp!", 'bot');
+  }
+}
+
+function addMessage(text, sender) {
+  const container = document.getElementById('chatMessages');
+  const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  const div = document.createElement('div');
+  div.className = `msg ${sender}`;
+  div.innerHTML = `<div class="msg-bubble">${text}</div><div class="msg-time">${time}</div>`;
+  container.appendChild(div);
+  scrollChat();
+}
+
+function scrollChat() {
+  const c = document.getElementById('chatMessages');
+  setTimeout(() => { c.scrollTop = c.scrollHeight; }, 50);
+}
+</script>
+
+</body>
+</html>
